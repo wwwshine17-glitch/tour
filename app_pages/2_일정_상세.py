@@ -21,7 +21,11 @@ if not destination:
     if st.button("여행 추천으로 이동", type="primary"):
         st.switch_page("app_pages/1_여행_추천.py")
 else:
-    st.caption(f"{trip_length} · {destination}의 일정, 비용정보, 추천지역 브리핑을 확인합니다.")
+    st.markdown(
+        f'<p style="font-size:30px; font-weight:700; color:#000000;">'
+        f"{trip_length} · {destination}의 일정, 비용정보, 추천지역 브리핑을 확인합니다.</p>",
+        unsafe_allow_html=True,
+    )
     if st.button("다시 추천받기", icon=":material/refresh:"):
         st.session_state.pop("selected_destination", None)
         st.session_state.pop("selected_trip_length", None)
@@ -57,7 +61,7 @@ else:
                     f"{row['price']:,} | {contact} |"
                 )
             st.markdown("\n".join(table_rows))
-            st.caption("연락처를 클릭하면 해당 여행사의 예약 페이지로 이동합니다.")
+            st.caption(":primary[연락처를 클릭하면 해당 여행사의 예약 페이지로 이동합니다.]")
 
     with tab_news:
         for category, (label, icon) in NEWS_CATEGORY_LABELS.items():
