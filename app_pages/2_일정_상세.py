@@ -21,7 +21,7 @@ if not destination:
     if st.button("여행 추천으로 이동", type="primary"):
         st.switch_page("app_pages/1_여행_추천.py")
 else:
-    st.caption(f"{trip_length} · {destination}의 일정, 비용정보, 뉴스 브리핑을 확인합니다.")
+    st.caption(f"{trip_length} · {destination}의 일정, 비용정보, 추천지역 브리핑을 확인합니다.")
     if st.button("다시 추천받기", icon=":material/refresh:"):
         st.session_state.pop("selected_destination", None)
         st.session_state.pop("selected_trip_length", None)
@@ -32,7 +32,7 @@ else:
         products = get_products(destination, trip_length)
         briefing = get_news_briefing(destination)
 
-    tab_itinerary, tab_price, tab_news = st.tabs(["일정", "비용정보", "뉴스 브리핑"])
+    tab_itinerary, tab_price, tab_news = st.tabs(["일정", "비용정보", "추천지역 브리핑"])
 
     with tab_itinerary:
         for day_plan in itinerary:
