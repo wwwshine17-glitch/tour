@@ -1,4 +1,28 @@
+# Python 가상환경 / 캐시 - 로컬 전용, 용량 크고 환경마다 달라 커밋 대상 아님
 .venv/
 __pycache__/
 *.pyc
+
+# 환경변수 / 비밀키 파일 - API 키·토큰 등 민감정보가 평문으로 들어가는 파일
+.env
+.env.*
+!.env.example
+
+# Streamlit 비밀키 - KMA_API_KEY, NAVER_CLIENT_ID/SECRET 등이 저장되는 파일
 .streamlit/secrets.toml
+
+# Node.js 의존성 - 용량이 크고 package.json으로 재설치 가능해 커밋 불필요
+node_modules/
+
+# OS가 자동 생성하는 임시/메타데이터 파일 - 프로젝트와 무관하고 OS마다 달라짐
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 토큰/자격증명이 들어갈 수 있는 설정·키 파일
+*.pem
+*.key
+credentials.json
+*serviceAccount*.json
+.aws/
+.ssh/
