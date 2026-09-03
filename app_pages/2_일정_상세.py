@@ -18,7 +18,7 @@ trip_length = st.session_state.get("selected_trip_length")
 
 if not destination:
     st.info("먼저 여행 추천 페이지에서 여행지를 선택해 주세요.")
-    if st.button("여행 추천으로 이동"):
+    if st.button("여행 추천으로 이동", type="primary"):
         st.switch_page("app_pages/1_여행_추천.py")
 else:
     st.caption(f"{trip_length} · {destination}의 일정, 비용정보, 뉴스 브리핑을 확인합니다.")

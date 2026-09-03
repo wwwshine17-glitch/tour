@@ -1,5 +1,22 @@
 [theme]
-primaryColor = "#0B7A75"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F1F4F2"
-textColor = "#16222A"
+# Apple-design-analysis(DESIGN-apple.md) 토큰 적용
+primaryColor = "#0066cc"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f5f5f7"
+textColor = "#1d1d1f"
+linkColor = "#0066cc"
+borderColor = "#e0e0e0"
+showWidgetBorder = true
+linkUnderline = false
+
+baseRadius = "18px"
+buttonRadius = "full"
+
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+headingFont = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap"
+
+baseFontSize = 17
+baseFontWeight = 400
+
+headingFontSizes = ["40px", "28px", "21px", "17px", "14px", "12px"]
+headingFontWeights = [600, 600, 600, 600, 600, 400]

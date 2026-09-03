@@ -2,8 +2,10 @@ import streamlit as st
 
 from lib.destinations import get_candidate_destinations
 from lib.ranking import rank_destinations
-from lib.style import render_footer
+from lib.style import patch_multiselect_select_all_label, render_footer
 from lib.weather import get_weather_scores
+
+patch_multiselect_select_all_label("모든지역 선택")
 
 st.title("신나는 여행")
 st.caption("여행 기간을 입력하면 날씨 좋은 여행지를 비교해 추천합니다.")
@@ -18,8 +20,9 @@ with st.form("trip_input_form"):
     regions = st.multiselect(
         "관심 지역 (선택하지 않으면 전체 지역 대상)",
         options=REGION_OPTIONS,
+        placeholder="추천 받고 싶은 여행지를 선택해주세요",
     )
-    submitted = st.form_submit_button("추천받기")
+    submitted = st.form_submit_button("추천받기", type="primary")
 
 CONDITION_EMOJI = {
     "맑음": "☀️",
